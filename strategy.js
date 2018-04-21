@@ -23,11 +23,11 @@ passport.use('linkedin',new LinkedInStrategy({
 	console.log("Auth completed for trans_id "+req.session.data.trans_id+" will start sharing.");
 
 	var postjson = {
-		"comment": req.session.data.comment,
+		"comment": req.session.data.message,
 		"content": {
 			"title": req.session.data.title,
-			"description": req.session.data.message,
-			"submitted-url": req.session.data.url,  
+			"description": req.session.data.description,
+			"submitted-url": req.session.data.url,
 			"submitted-image-url": req.session.data.includeImage
 		},
 		"visibility": {
