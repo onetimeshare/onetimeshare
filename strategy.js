@@ -35,7 +35,7 @@ passport.use('linkedin',new LinkedInStrategy({
 		}  
 	};
 
-	var linkedin = Linkedin.init(user.linkedin.token);
+	var linkedin = Linkedin.init(accessToken);
     linkedin.people.share(postjson, function(err, data) {
 		var redirect_url = req.session.data.redirect_url;
 		if(err){
